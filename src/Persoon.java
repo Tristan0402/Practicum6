@@ -1,4 +1,5 @@
 
+
 import java.util.ArrayList;
 
 public class Persoon {
@@ -48,14 +49,18 @@ public class Persoon {
             return false;
         }
 
-        public Game zoekGameOpNaam(String s){
-            for(Game game : mijnGames){
-                if(s == game.getNaam()) {
-                    return game;
+    public ArrayList<Game> bepaalGamesNietInBezit(ArrayList<Game> a) {
+            ArrayList<Game> aap = new ArrayList<>();
+        for (int i = 0; i < a.size(); i++) {
+            for (Game item : this.mijnGames) {
+                if (item.equals(a.get(i))) {
+                } else {
+                    aap.add(a.get(i));
                 }
             }
-            return null;
         }
+        return aap;
+    }
 
         public String toString(){
             String output = this.naam + " heeft een budget van €" + String.format("%.2f", this.budget) + " en bezit de volgende games:";
