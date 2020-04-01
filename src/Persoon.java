@@ -1,4 +1,3 @@
-import OOP.Prakticum.Practicum5.Opdracht1.Leerling;
 
 import java.util.ArrayList;
 
@@ -47,6 +46,15 @@ public class Persoon {
                 }
             }
             return false;
+        }
+
+        public Game zoekGameOpNaam(String s){
+            for(Game game : mijnGames){
+                if(s == game.getNaam()) {
+                    return game;
+                }
+            }
+            return null;
         }
 
         public String toString(){
