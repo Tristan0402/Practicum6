@@ -1,4 +1,4 @@
-import OOP.Prakticum.Practicum5.Opdracht1.Leerling;
+
 
 import java.util.ArrayList;
 
@@ -48,6 +48,19 @@ public class Persoon {
             }
             return false;
         }
+
+    public ArrayList<Game> bepaalGamesNietInBezit(ArrayList<Game> a) {
+            ArrayList<Game> aap = new ArrayList<>();
+        for (int i = 0; i < a.size(); i++) {
+            for (Game item : this.mijnGames) {
+                if (item.equals(a.get(i))) {
+                } else {
+                    aap.add(a.get(i));
+                }
+            }
+        }
+        return aap;
+    }
 
         public String toString(){
             String output = this.naam + " heeft een budget van €" + String.format("%.2f", this.budget) + " en bezit de volgende games:";
